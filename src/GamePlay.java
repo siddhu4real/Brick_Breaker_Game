@@ -178,12 +178,12 @@ public class GamePlay extends JPanel implements KeyListener , ActionListener {
 
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
             if (!play) {
-                ballposX = 120;
-                ballposY = 350;
+                ballposX = x;
+                ballposY = y2-y1;
                 ballXdir = -1;
                 ballYdir = -2;
                 score = 0;
-                playerX = 310;
+                playerX = p;
                 totalbricks = 21;
                 map = new MapGenerator(3, 7);
 
