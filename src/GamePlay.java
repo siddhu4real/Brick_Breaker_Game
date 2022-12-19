@@ -10,17 +10,27 @@ import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
 import java.util.EventListener;
+import java.util.Random;
 
 public class GamePlay extends JPanel implements KeyListener , ActionListener {
+    Random rand = new Random();
 
     private boolean play = false;
     private int score = 0;
     private int totalbricks = 21;
     private Timer Timer;
     private int delay = 8;
-    private int playerX = 310;
-    private int ballposX = 120;
-    private int ballposY = 350;
+
+    private int p = rand.nextInt(600);
+    private int playerX = p;
+
+    private int x = rand.nextInt(650);
+    private int ballposX = x;
+
+    private int y2 = 550;
+    private int y1 = rand.nextInt(200);
+    private int ballposY = y2-y1;
+
     private int ballXdir = -1;
     private int ballYdir = -2;
     private MapGenerator map;
