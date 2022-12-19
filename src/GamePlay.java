@@ -104,9 +104,8 @@ public class GamePlay extends JPanel implements KeyListener , ActionListener {
                         int bricksWidth = map.bricksWidth;
                         int bricksHeight = map.bricksHeight;
 
-                        Rectangle rect = new Rectangle(brickX, brickY, bricksWidth, bricksHeight);
+                        Rectangle brickrect = new Rectangle(brickX, brickY, bricksWidth, bricksHeight);
                         Rectangle ballrect = new Rectangle(ballposX, ballposY, 20, 20);
-                        Rectangle brickrect = rect;
 
                         if (ballrect.intersects(brickrect)) {
                             map.setBricksValue(0, i, j);
@@ -188,12 +187,12 @@ public class GamePlay extends JPanel implements KeyListener , ActionListener {
     public void moveRight ()
     {
         play = true;
-        playerX += 20;
+        playerX += 45;
     }
     public void moveLeft ()
     {
         play = true;
-        playerX -= 20;
+        playerX -= 45;
     }
 
 
