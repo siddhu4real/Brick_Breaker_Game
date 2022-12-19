@@ -21,7 +21,7 @@ public class GamePlay extends JPanel implements KeyListener , ActionListener {
     private Timer Timer;
     private int delay = 8;
 
-    private int p = rand.nextInt(600);
+    private int p = rand.nextInt(550);
     private int playerX = p;
 
     private int x = rand.nextInt(650);
@@ -57,10 +57,10 @@ public class GamePlay extends JPanel implements KeyListener , ActionListener {
 
         g.setColor(Color.lightGray);
         g.setFont(new Font("serif", Font.BOLD, 35));
-        g.drawString("" + score, 635, 40);
+        g.drawString("" + score, 630, 40);
 
         g.setColor(Color.yellow);
-        g.fillRect(playerX, 550, 100, 8);
+        g.fillRect(playerX, 550, 150, 8);
 
         //ball
         g.setColor(Color.GREEN);
@@ -81,9 +81,9 @@ public class GamePlay extends JPanel implements KeyListener , ActionListener {
             play = false;
             ballYdir = -2;
             ballXdir = -1;
-            g.setColor(Color.red);
+            g.setColor(Color.GREEN);
             g.setFont(new Font("serif",Font.BOLD,30));
-            g.drawString("    Game Over: "+score,190,300);
+            g.drawString("    You Won ! : "+score,190,300);
 
             g.setFont(new Font("serif", Font.BOLD, 30));
             g.drawString("   Press Enter to Restart", 190, 340);
@@ -101,7 +101,7 @@ public class GamePlay extends JPanel implements KeyListener , ActionListener {
         Timer.start();
 
         if (play) {
-            if (new Rectangle(ballposX, ballposY, 20, 20).intersects(new Rectangle(playerX, 550, 100, 8))) {
+            if (new Rectangle(ballposX, ballposY, 20, 20).intersects(new Rectangle(playerX, 550, 150, 8))) {
                 ballYdir = -ballYdir-1;
             }
 
@@ -162,8 +162,8 @@ public class GamePlay extends JPanel implements KeyListener , ActionListener {
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            if (playerX >= 600) {
-                playerX = 600;
+            if (playerX >= 550) {
+                playerX = 550;
             } else {
                 moveRight();
             }
