@@ -41,13 +41,13 @@ public class GamePlay extends JPanel implements KeyListener , ActionListener {
         map.draw((Graphics2D) g);
 
         g.setColor(Color.yellow);
-        g.fillRect(0, 0, 3, 592);
-        g.fillRect(0, 0, 692, 3);
-        g.fillRect(691, 0, 3, 592);
+        g.fillRect(1, 0, 3, 597);
+        g.fillRect(0, 1, 694, 3);
+        g.fillRect(683, 0, 3, 597);
 
-        g.setColor(Color.white);
-        g.setFont(new Font("serif", Font.BOLD, 25));
-        g.drawString("" + score, 590, 30);
+        g.setColor(Color.lightGray);
+        g.setFont(new Font("serif", Font.BOLD, 35));
+        g.drawString("" + score, 635, 40);
 
         g.setColor(Color.yellow);
         g.fillRect(playerX, 550, 100, 8);
@@ -111,7 +111,7 @@ public class GamePlay extends JPanel implements KeyListener , ActionListener {
                             map.setBricksValue(0, i, j);
                             totalbricks--;
                             score += 5;
-                            if (ballposX + 19 <= brickrect.x || ballposX + 1 >= brickrect.x + bricksWidth) {
+                            if (ballposX + 12 <= brickrect.x || ballposX + 1 >= brickrect.x + bricksWidth) {
                                 ballXdir = -ballXdir;
                             } else {
                                 ballYdir = -ballYdir;
