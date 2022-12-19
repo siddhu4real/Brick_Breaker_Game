@@ -92,7 +92,7 @@ public class GamePlay extends JPanel implements KeyListener , ActionListener {
 
         if (play) {
             if (new Rectangle(ballposX, ballposY, 20, 20).intersects(new Rectangle(playerX, 550, 100, 8))) {
-                ballYdir = -ballYdir;
+                ballYdir = -ballYdir-1;
             }
 
             A:
